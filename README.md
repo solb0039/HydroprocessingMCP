@@ -29,14 +29,17 @@ uv run python scripts/generate_sample_data.py   # (re)build data/sample/syntheti
 > Intel macOS: `pyproject.toml` sets `tool.uv.required-environments`. This makes uv choose
 > an RDKit release that still ships x86_64 macOS wheels.
 
-### Connect to Claude
+### Connect an MCP client
 
-Claude Code:
+The server speaks standard MCP over stdio, so it works with any MCP-compatible client or
+agent framework. Configure the client to launch this command:
+
 ```bash
-claude mcp add hydromcp -- uv run --directory /path/to/HydroprocessingMCP hydromcp
+uv run --directory /path/to/HydroprocessingMCP hydromcp
 ```
 
-Claude Desktop (`claude_desktop_config.json`):
+Most desktop clients accept a JSON entry in this common `mcpServers` format (the config
+file's name and location depend on the client):
 ```json
 {
   "mcpServers": {
@@ -49,7 +52,8 @@ Claude Desktop (`claude_desktop_config.json`):
 }
 ```
 
-To run it as an HTTP server, use `uv run hydromcp --http` (serves on 127.0.0.1:8000). To open
+For clients that connect over HTTP instead of launching a process, use `uv run hydromcp --http`
+(streamable HTTP on 127.0.0.1:8000). To open
 the inspector, use `uv run fastmcp dev src/hydromcp/server.py`.
 
 ### Configuration (environment variables)
@@ -72,7 +76,7 @@ Field units are used throughout: °F, psia (gauge inputs end in `_psig`), BPD, S
 60 °F and 1 atm, wppm, lb, ft, lb/ft³. `hydromcp.core.units` has pint-based `convert()` plus
 helpers (`psig_to_psia`, `f_to_k`, `api_to_sg`, …).
 
-## Typical workflow (what to ask Claude)
+## Typical workflow (example requests to your AI assistant)
 
 1. "Load `data/sample/synthetic_ulsd.csv` with the `example` tag map."
 2. "Compute bed WABTs, then the catalyst-weighted reactor WABT, LHSV, H₂ partial pressure,

@@ -1,6 +1,6 @@
 """HydroprocessingMCP server: mounts the section servers and exposes browsable resources.
 
-Run:  uv run hydromcp            (stdio, for Claude Desktop / Claude Code)
+Run:  uv run hydromcp            (stdio, for desktop/CLI MCP clients)
       uv run hydromcp --http     (streamable HTTP on 127.0.0.1:8000)
 """
 
