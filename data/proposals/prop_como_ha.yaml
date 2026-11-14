@@ -1,0 +1,19 @@
+proposal:
+  id: PROP-COMO-HA
+  name: Full high-activity CoMo reload
+  unit_id: ULSD-1
+  beds:
+    - reactor_id: R-101
+      bed_name: bed1
+      layers:
+        - {catalyst_id: GRADE-RING-16, depth_ft: 0.5}
+        - {catalyst_id: GRADE-HDM-3, depth_ft: 1.5}
+        - {catalyst_id: CAT-COMO-HA, loading_method: dense, depth_ft: 15.0}
+        - {catalyst_id: INERT-BALL-6MM, depth_ft: 0.25}
+    - reactor_id: R-101
+      bed_name: bed2
+      layers:
+        - {catalyst_id: INERT-BALL-6MM, depth_ft: 0.25}
+        - {catalyst_id: CAT-COMO-HA, loading_method: dense, depth_ft: 24.75}
+        - {catalyst_id: INERT-BALL-6MM, depth_ft: 0.5}
+        - {catalyst_id: INERT-BALL-19MM, depth_ft: 3.0}

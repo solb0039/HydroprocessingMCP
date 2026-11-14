@@ -1,0 +1,52 @@
+# Example ULSD unit: one reactor, two beds with interbed quench.
+unit:
+  id: ULSD-1
+  name: Example ULSD hydrotreater
+  service: ULSD
+  max_wabt_f: 760
+  product_sulfur_spec_wppm: 8
+  reactors:
+    - id: R-101
+      inside_diameter_ft: 12.0
+      head_type: "2:1_elliptical"
+      beds:
+        - name: bed1
+          cylindrical_height_ft: 18.0
+          min_outage_ft: 0.5
+          internals_area_ft2: 0.15
+        - name: bed2
+          cylindrical_height_ft: 26.0
+          includes_bottom_head: true
+          min_outage_ft: 0.5
+          internals_area_ft2: 0.15
+  design_basis:
+    feed_rate_bpd: 35000
+    feed_sg: 0.865
+    feed_sulfur_wppm: 12000
+    feed_nitrogen_wppm: 250
+    feed_aromatics_wt: 32
+    h2_partial_pressure_psia: 900
+    treat_gas_ratio_scf_bbl: 1500
+    wabt_f: 672
+    product_sulfur_wppm: 8
+    product_nitrogen_wppm: 12
+    product_aromatics_wt: 24
+  current_loading:
+    id: ULSD-1:current
+    name: Existing loading (reference CoMo)
+    unit_id: ULSD-1
+    beds:
+      - reactor_id: R-101
+        bed_name: bed1
+        layers:
+          - {catalyst_id: GRADE-RING-16, depth_ft: 0.5}
+          - {catalyst_id: GRADE-HDM-3, depth_ft: 1.5}
+          - {catalyst_id: CAT-COMO-REF, loading_method: dense, depth_ft: 15.0}
+          - {catalyst_id: INERT-BALL-6MM, depth_ft: 0.25}
+      - reactor_id: R-101
+        bed_name: bed2
+        layers:
+          - {catalyst_id: INERT-BALL-6MM, depth_ft: 0.25}
+          - {catalyst_id: CAT-COMO-REF, loading_method: dense, depth_ft: 24.75}
+          - {catalyst_id: INERT-BALL-6MM, depth_ft: 0.5}
+          - {catalyst_id: INERT-BALL-19MM, depth_ft: 3.0}

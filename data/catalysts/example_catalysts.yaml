@@ -1,0 +1,115 @@
+# Example (generic, illustrative) catalyst library. Replace with your vendor data.
+# activity = relative volume activity (RVA) vs the reference catalyst used in the unit's
+# calibration (here CAT-COMO-REF = 1.0 for every reaction).
+catalysts:
+  - id: INERT-BALL-19MM
+    name: Inert alumina support balls 3/4 in
+    function: inert
+    shape: sphere
+    size_mm: 19
+    density_sock_lb_ft3: 85
+    void_fraction_sock: 0.40
+    package_size_lb: 2200
+    cost_per_lb: 1.2
+  - id: INERT-BALL-6MM
+    name: Inert alumina support balls 1/4 in
+    function: inert
+    shape: sphere
+    size_mm: 6
+    density_sock_lb_ft3: 85
+    void_fraction_sock: 0.38
+    package_size_lb: 2200
+    cost_per_lb: 1.4
+  - id: GRADE-RING-16
+    name: Large ring grading / particulate trap
+    function: grading
+    shape: ring
+    size_mm: 16
+    density_sock_lb_ft3: 32
+    void_fraction_sock: 0.55
+    activity: {hds: 0.05}
+    deactivation_rate_f_per_month: 2.0
+    package_size_lb: 1000
+    cost_per_lb: 6.0
+  - id: GRADE-HDM-3
+    name: Low-activity grading catalyst 3 mm
+    function: grading
+    metals: NiMo
+    shape: trilobe
+    size_mm: 3.0
+    density_sock_lb_ft3: 36
+    density_dense_lb_ft3: 40
+    void_fraction_sock: 0.45
+    void_fraction_dense: 0.41
+    activity: {hds: 0.25, hdn: 0.2, hda: 0.1}
+    deactivation_rate_f_per_month: 2.2
+    package_size_lb: 1500
+    cost_per_lb: 8.0
+  - id: CAT-COMO-REF
+    name: Reference CoMo ULSD catalyst (calibration basis)
+    function: hds
+    metals: CoMo
+    shape: trilobe
+    size_mm: 1.3
+    density_sock_lb_ft3: 42
+    density_dense_lb_ft3: 48
+    void_fraction_sock: 0.40
+    void_fraction_dense: 0.36
+    activity: {hds: 1.0, hdn: 1.0, hda: 1.0}
+    activation_energy_kj_mol: {hds: 110, hdn: 125, hda: 80}
+    reaction_order: {hds: 1.5, hdn: 1.0, hda: 1.0}
+    deactivation_rate_f_per_month: 1.5
+    h2_consumption_factor: 1.0
+    max_temperature_f: 780
+    package_size_lb: 2000
+    cost_per_lb: 12.0
+  - id: CAT-COMO-HA
+    name: High-activity CoMo (next generation)
+    function: hds
+    metals: CoMo
+    shape: quadlobe
+    size_mm: 1.3
+    density_sock_lb_ft3: 44
+    density_dense_lb_ft3: 50
+    void_fraction_sock: 0.41
+    void_fraction_dense: 0.37
+    activity: {hds: 1.30, hdn: 1.10, hda: 1.05}
+    activation_energy_kj_mol: {hds: 110, hdn: 125, hda: 80}
+    deactivation_rate_f_per_month: 1.3
+    h2_consumption_factor: 1.03
+    max_temperature_f: 780
+    package_size_lb: 2000
+    cost_per_lb: 15.0
+  - id: CAT-NIMO-HA
+    name: High-activity NiMo (HDN / hydrogenation)
+    function: hdn
+    metals: NiMo
+    shape: quadlobe
+    size_mm: 1.3
+    density_sock_lb_ft3: 47
+    density_dense_lb_ft3: 54
+    void_fraction_sock: 0.40
+    void_fraction_dense: 0.36
+    activity: {hds: 1.15, hdn: 1.60, hda: 1.50}
+    activation_energy_kj_mol: {hds: 105, hdn: 120, hda: 75}
+    deactivation_rate_f_per_month: 1.7
+    h2_consumption_factor: 1.12
+    max_temperature_f: 790
+    package_size_lb: 2000
+    cost_per_lb: 16.0
+  - id: CAT-HCK-DIST
+    name: Distillate-selective hydrocracking catalyst
+    function: hck
+    metals: NiW
+    shape: cylinder
+    size_mm: 1.6
+    density_sock_lb_ft3: 48
+    density_dense_lb_ft3: 55
+    activity: {hck: 1.0, hds: 0.6, hdn: 0.5, hda: 1.2}
+    activation_energy_kj_mol: {hck: 160}
+    deactivation_rate_f_per_month: 1.0
+    h2_consumption_factor: 1.0
+    max_temperature_f: 800
+    yield_selectivity: {c1_c4: 0.06, naphtha: 0.22, kerosene: 0.32, diesel: 0.40}
+    package_size_lb: 2000
+    cost_per_lb: 25.0

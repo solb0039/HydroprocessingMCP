@@ -1,0 +1,17 @@
+# Raw historian tag -> canonical name used with the equations
+tags:
+  - {tag: "11FI100.PV", name: feed_rate_bpd, unit: BPD, description: Fresh feed}
+  - {tag: "11AI101_SG", name: feed_sg, unit: "", description: Feed SG (LIMS)}
+  - {tag: "11AI102_S", name: feed_s_wppm, unit: wppm, description: Feed sulfur (LIMS)}
+  - {tag: "11AI103_N", name: feed_n_wppm, unit: wppm, description: Feed nitrogen (LIMS)}
+  - {tag: "11AI201_S", name: prod_s_wppm, unit: wppm, description: Product sulfur analyzer}
+  - {tag: "11TI110.PV", name: bed1_t_in, unit: degF}
+  - {tag: "11TI111.PV", name: bed1_t_out, unit: degF}
+  - {tag: "11TI120.PV", name: bed2_t_in, unit: degF}
+  - {tag: "11TI121.PV", name: bed2_t_out, unit: degF}
+  - {tag: "11PI130.PV", name: reactor_p_psig, unit: psig}
+  - {tag: "11AI131_H2", name: recycle_h2_mol, unit: "mol frac", scale: 0.01, description: Recycle gas H2 analyzer (mol%)}
+  - {tag: "11FI140.PV", name: makeup_mscfd, unit: MSCF/day}
+  - {tag: "11AI141_H2", name: makeup_purity, unit: "mol frac", scale: 0.01}
+  - {tag: "11FI150.PV", name: purge_mscfd, unit: MSCF/day}
+  - {tag: "11PDI160.PV", name: reactor_dp_psi, unit: psi}
